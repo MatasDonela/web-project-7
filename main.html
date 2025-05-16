@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Theatre</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;550;700;900&display=swap" rel="stylesheet" />
+</head>
+<body class="roboto-condensed-normal">
+
+  <header class="top-menu">
+    <h1>Mooovie's Theatre</h1>
+    <div>
+      <img src="images/cow.svg" alt="cow image">
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#today">Today's Movies</a>
+      <a href="#upcoming">New & Upcoming</a>
+      <a href="#suggestions">Suggestions</a>
+      <a href="#login" id="login-btn">Log In</a>      
+      <a href="#signup" id="signup-btn">Sign Up</a> 
+      
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Popular Releases Slideshow -->
+    <section id="popular" class="popular-slideshow">
+      <h1>- Popular Releases -</h1>
+      <div class="slideshow-wrapper">
+        <div class="slideshow-track">
+          <div class="slide">
+            <img src="images/sinners_poster.jpg" alt="Popular Movie 1">
+          </div>
+          <div class="slide">
+            <img src="images/minecraft_movie_poster.jpg" alt="Popular Movie 2">
+          </div>
+          <div class="slide">
+            <img src="images/lilo_and_stitch_poster.jpg" alt="Popular Movie 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Today's Movies -->
+    <section id="today" class="section-movies">
+      <h2>Today's Movies</h2>
+      <div class="movie-grid">
+        <div class="movie-card">
+          <img src="images/minecraft_movie_poster.jpg" alt="Minecraft">
+          <p>A MINECRAFT MOVIE</p>
+        </div>
+        <div class="movie-card">
+          <img src="images/thunderbolts_poster.jpg" alt="Thunderbolts">
+          <p>THUNDERBOLTS</p>
+        </div>
+        <div class="movie-card">
+          <img src="images/lilo_and_stitch_poster.jpg" alt="Lilo & Stitch">
+          <p>LILO & STITCH</p>
+        </div>
+        <div class="movie-card">
+          <img src="images/sinners_poster.jpg" alt="Sinners">
+          <p>SINNERS</p>
+        </div>
+        <div class="movie-card">
+          <img src="images/final_destination_poster.jpg" alt="Final Destination">
+          <p>FINAL DESTINATION: BLOODLINE</p>
+        </div>
+        <div class="movie-card">
+          <img src="images/conclave_poster.jpg" alt="Conclave">
+          <p>CONCLAVE</p>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <section id="upcoming" class="section-movies">
+      <h2>New & Upcoming</h2>
+      <div class="movie-grid">
+        <div class="movie-card">
+          <img src="images/mission_impossible_poster.jpg" alt="Minecraft" />
+          <p>Release Date: May 21 , 2025</p>
+          <label class="notify-label">
+            <input type="checkbox" name="notify1" />
+            Notify me
+          </label>
+        </div>
+        <div class="movie-card">
+          <img src="images/nobody2_poster.jpg" alt="Thunderbolts" />
+          <p>Release Date: August 15, 2025</p>
+          <label class="notify-label">
+            <input type="checkbox" name="notify2" />
+            Notify me
+          </label>
+        </div>
+        <div class="movie-card">
+          <img src="images/avatar_poster.jpg" alt="Lilo & Stitch" />
+          <p>Release Date: December 19, 2025</p>
+          <label class="notify-label">
+            <input type="checkbox" name="notify3" />
+            Notify me
+          </label>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+    
+    <!-- Suggestions -->
+    <section id="suggestions" class="suggestion-form">
+      <h2>Suggest a Movie!</h2>
+      <form>
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+        <input type="email" placeholder="E-mail" required />
+        <textarea placeholder="Suggestion" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+        <!-- about us-->>
+
+    
+    <section id="about-us">
+      <h2>About Us</h2>
+      <p>
+        Welcome to <strong>Moovie's Theatre</strong>, Iceland’s coziest and most charming movie theatre, right here in Reykjavík! Since 2005, we've been bringing a unique cinematic experience to film lovers across the country—complete with our beloved mascot, Moovie the Cow.
+      </p>
+      <p>
+        Moovie's Theatre isn’t just any cinema. It’s where stories come to life amidst warm, rustic decor inspired by Iceland’s natural beauty—and where Moovie, our friendly cow mascot, adds a touch of whimsy and fun to every visit.
+      </p>
+      <p>
+        Our state-of-the-art screens and sound systems deliver crystal-clear visuals and immersive audio for every blockbuster, indie flick, and Icelandic gem we show. Plus, we serve local snacks (including some delicious Icelandic dairy treats that Moovie personally endorses).
+      </p>
+      <p>
+        Whether you’re here for family movie nights, midnight premieres, or our famous Moovie-themed events, you’ll find a welcoming atmosphere that celebrates film, community, and a little bit of Icelandic magic.
+      </p>
+      <p>
+        Come say hi to Moovie, grab some popcorn, and enjoy the show. At Moovie’s Theatre, we don’t just watch movies — we celebrate them.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Moovie's Theatre</p>
+  </footer>
+  <div id="showtimes-overlay" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+">
+  <div id="showtimes-content" style="
+    background: var(--maincolor1);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    position: relative;
+  ">
+    <button id="showtimes-close" style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    ">X</button>
+    <!-- Showtimes table will be inserted here dynamically -->
+  </div>
+</div>
+
+<!-- Modal overlay for login and signup -->
+<div id="auth-overlay" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+">
+  <div id="auth-content" style="
+    background: var(--maincolor1);
+    color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  ">
+    <button id="auth-close" style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    ">X</button>
+    <!-- Forms will be inserted here dynamically -->
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

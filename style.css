@@ -1,0 +1,354 @@
+/* Font Styles */
+.roboto-condensed-normal {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-condensed-thick {
+  font-weight: 550;
+}
+
+.roboto-condensed-bold {
+  font-weight: 700;
+}
+
+.roboto-condensed-fat {
+  font-weight: 900;
+}
+
+/* Color Themes */
+:root {
+  --textcolor1: #000000;
+  --textcolor2: #100020;
+  --maincolor1: #4A102A;
+  --maincolor2: #85193C;
+  --secondarycolor1: #C5172E;
+  --secondarycolor2: #FCF259;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textcolor1: #ffffff;
+    --textcolor2: #ffe9da;
+    --maincolor1: #380829;
+    --maincolor2: #721145;
+    --secondarycolor1: #af0943;
+    --secondarycolor2: #fcc742;
+  }
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  background-color: var(--maincolor2);
+  color: var(--textcolor1);
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header.top-menu {
+  background-color: var(--maincolor1);
+  color: var(--secondarycolor2);
+  padding: 1rem;
+  text-align: center;
+}
+
+.top-menu h1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.nav-links {
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  margin: 0 0.5rem;
+  color: var(--secondarycolor2);
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.section-movies {
+  padding: 1rem;
+  text-align: center; /* Centers "TODAY MOVIES" text */
+}
+
+.section-movies h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--secondarycolor2);
+}
+
+/* Slideshow Section */
+.popular-slideshow {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: white;
+  overflow: hidden;
+}
+
+.slideshow-wrapper {
+  width: 300px;
+  height: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+.slideshow-track {
+  display: flex;
+  width: calc(300px * 4);
+  animation: slideBounceLoop 16s infinite;
+}
+
+.slide {
+  width: 300px;
+  height: 450px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Keyframes */
+@keyframes slideBounceLoop {
+  0%, 10%     { transform: translateX(0); }
+  14%         { transform: translateX(-320px); }
+  15%, 45%    { transform: translateX(-300px); }
+  50%         { transform: translateX(-620px); }
+  51%, 81%    { transform: translateX(-600px); }
+  86%         { transform: translateX(20px); }
+  87%, 100%   { transform: translateX(0); }
+}
+
+/* Movie Grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  padding-top: 1rem;
+}
+
+.movie-card {
+  background-color: var(--maincolor1);
+  border: 2px solid var(--secondarycolor1);
+  padding: 0.75rem;
+  text-align: center;
+  color: white; /* Movie names changed to white */
+  border-radius: 8px;
+  width: 225px;
+  font-size: 1.1rem;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.movie-card p {
+  font-weight: bold;
+  margin: 0;
+  color: white; /* Ensures text stays white even if overridden */
+}
+
+/* Forms */
+.suggestion-form, .auth-form {
+  background-color: var(--maincolor1);
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input, textarea, button {
+  padding: 0.5rem;
+  font-family: inherit;
+  border: 1px solid var(--secondarycolor1);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--secondarycolor1);
+  color: var(--textcolor1);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--maincolor1);
+  color: var(--secondarycolor2);
+}
+
+/* Section Headings */
+.section-movies h2,
+.popular-slideshow h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-movies .movie-card {
+  width: 300px; /* increase from 225px */
+  font-size: 1.2rem; /* slightly bigger text */
+  padding: 1rem; /* a bit more padding */
+}
+
+.section-movies .movie-card img {
+  height: 350px; /* increase image height */
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+
+.movie-card img {
+  width: 100%;      /* fill the container width */
+  height: auto;     /* keep aspect ratio, prevent stretching */
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  object-fit: contain; /* ensures the entire image fits without cropping */
+  background-color: #222; /* optional: add a background so empty space looks nice */
+}
+
+header.top-menu img {
+  animation: spinScaleIn 2s ease forwards;
+  transform-origin: center center;
+}
+
+
+@keyframes spinScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.section-movies .movie-card img {
+  width: 100%;        /* fill container width */
+  height: auto;       /* automatic height to keep aspect ratio */
+  object-fit: cover;  /* fill the box, cropping excess */
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  background-color: #222; /* optional background */
+}
+
+.showtimes-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  background-color: var(--secondarycolor1);
+  color: var(--textcolor1);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.showtimes-btn:hover {
+  background-color: var(--secondarycolor2);
+  color: var(--maincolor1);
+}
+
+.showtimes-menu table {
+  color: white;
+  border: 1px solid var(--secondarycolor1);
+  border-radius: 6px;
+  background-color: var(--maincolor1);
+}
+
+.showtimes-menu th,
+.showtimes-menu td {
+  border: 1px solid var(--secondarycolor1);
+  padding: 0.5rem;
+}
+
+
+#about-us {
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: #f0e9e0;
+  font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+}
+
+#about-us h2 {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--secondarycolor2); /* warm golden highlight */
+  text-shadow: 0 0 8px var(--secondarycolor2);
+}
+
+#about-us p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  letter-spacing: 0.02em;
+}
+
+#about-us p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Align checkbox and date input horizontally with some spacing */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notify-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  color: var(--secondarycolor2);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Make date input smaller and fit nicely */
+.movie-card input[type="date"] {
+  padding: 0.2rem 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--secondarycolor1);
+  background-color: var(--maincolor2);
+  color: var(--textcolor1);
+  width: 140px;
+}
